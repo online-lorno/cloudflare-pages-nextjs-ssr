@@ -9,5 +9,12 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  // res.status(200).json({ name: 'John Doe' })
+
+  return new Response(JSON.stringify({ name: 'John Doe' }), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
 }
